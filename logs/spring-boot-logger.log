@@ -212,3 +212,84 @@ ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@68702e03 - failed
 2023-02-09 16:31:25,466 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-02-09 16:31:25,468 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2023-02-09 16:31:25,475 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-09 16:39:46,596 INFO o.s.b.StartupInfoLogger [main] Starting ElectiveSpringApplication using Java 17.0.6 with PID 10364 (C:\Users\fanno\IdeaProjects\elective-spring2\target\classes started by horn in C:\Users\fanno\IdeaProjects\elective-spring2)
+2023-02-09 16:39:46,601 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-02-09 16:39:46,603 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-09 16:39:47,525 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-09 16:39:47,642 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 105 ms. Found 6 JPA repository interfaces.
+2023-02-09 16:39:48,494 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-09 16:39:48,507 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:39:48,509 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-09 16:39:48,510 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-02-09 16:39:48,618 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-09 16:39:48,620 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1883 ms
+2023-02-09 16:39:48,860 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-09 16:39:49,278 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7abeabe9
+2023-02-09 16:39:49,280 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-09 16:39:49,337 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-09 16:39:49,431 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-02-09 16:39:49,780 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-09 16:39:50,140 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-09 16:39:51,001 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-09 16:39:51,011 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:39:51,736 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-09 16:39:52,130 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:39:52,157 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-09 16:39:52,170 INFO o.s.b.StartupInfoLogger [main] Started ElectiveSpringApplication in 6.25 seconds (process running for 6.906)
+2023-02-09 16:39:57,996 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-09 16:39:57,997 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-09 16:39:57,999 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-02-09 16:41:28,704 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:41:28,707 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-09 16:41:28,718 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-09 16:41:56,904 INFO o.s.b.StartupInfoLogger [main] Starting ElectiveSpringApplication using Java 17.0.6 with PID 7656 (C:\Users\fanno\IdeaProjects\elective-spring2\target\classes started by horn in C:\Users\fanno\IdeaProjects\elective-spring2)
+2023-02-09 16:41:56,907 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-02-09 16:41:56,909 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-09 16:41:57,797 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-09 16:41:57,938 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 128 ms. Found 6 JPA repository interfaces.
+2023-02-09 16:41:58,917 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-09 16:41:58,931 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:41:58,934 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-09 16:41:58,935 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-02-09 16:41:59,025 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-09 16:41:59,027 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2044 ms
+2023-02-09 16:41:59,341 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-09 16:41:59,726 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58b311ba
+2023-02-09 16:41:59,729 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-09 16:41:59,779 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-09 16:41:59,836 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-02-09 16:42:00,184 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-09 16:42:00,368 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-09 16:42:01,237 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-09 16:42:01,252 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:42:01,809 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-09 16:42:02,151 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:42:02,174 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-09 16:42:02,194 INFO o.s.b.StartupInfoLogger [main] Started ElectiveSpringApplication in 5.865 seconds (process running for 6.303)
+2023-02-09 16:42:10,680 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-09 16:42:10,680 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-09 16:42:10,682 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 0 ms
+2023-02-09 16:42:12,850 DEBUG o.e.l.UserManager [http-nio-8080-exec-2] find user: User{id=6, firstName='student', lastName='test', roleId=3, email='student@test.org', blocked=false}
+2023-02-09 16:42:12,895 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:42:12,907 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:42:12,928 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}, Course{id=3, teacherId=2, name='The Complete 2022 Web Development Bootcamp', topic='it', duration=180}, Course{id=4, teacherId=2, name='UI/UX Design Essential Training', topic='it', duration=150}, Course{id=5, teacherId=2, name='boxing', topic='punch', duration=110}, Course{id=6, teacherId=2, name='sambo', topic='punch', duration=170}, Course{id=7, teacherId=3, name='c++', topic='it', duration=140}, Course{id=8, teacherId=3, name='c++', topic='it', duration=160}, Course{id=9, teacherId=3, name='kung-fu', topic='punch', duration=130}, Course{id=10, teacherId=3, name='Training course from Onepunchman', topic='punch', duration=100}]
+2023-02-09 16:42:12,937 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}, StudentsCourse{studentId=6, courseId=2, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:42:12,946 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:42:12,950 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] course properties: Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}
+2023-02-09 16:42:12,950 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}]
+2023-02-09 16:42:12,954 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: [StudentsCourse{studentId=5, courseId=3, registrationDate=2021-12-21, grade=5}]
+2023-02-09 16:42:12,958 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: [StudentsCourse{studentId=4, courseId=4, registrationDate=2021-10-12, grade=3}]
+2023-02-09 16:42:12,961 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,964 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,967 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,970 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,973 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,976 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: []
+2023-02-09 16:42:12,980 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:42:12,982 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:42:12,985 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:42:12,987 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:42:12,989 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:42:12,991 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:42:12,993 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:42:12,995 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
