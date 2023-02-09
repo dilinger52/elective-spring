@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<form th:fragment="filter" action="filter" method="post" class="sidebar" id="filter">
+    <div class="header_filter_wrapper">
+        <div class="filter_header" th:text="#{filter.header}"></div>
+        <input class="clear_button" type="submit" th:value="#{filter.clear}" form="clear">
+    </div>
+    <div class="filter_wrapper">
+        <div class="filter_name" th:text="#{filter.topics}"></div>
+        <th:block th:each="topic : ${session.topics}">
+            <div class="filter">
+                <input type="checkbox" name="topic" th:value="${topic}" class="checkbox" onchange="submit()" th:checked="${param.topic != null ? #sets.contains(param.topic, topic) : false}">
+                <div class="filter_value" th:text="${topic}"></div>
+            </div>
+        </th:block>
+        <th:block th:if="${session.user.roleId != 2}">
+        <div class="filter_name" th:text="#{filter.teachers}"></div>
+        <th:block th:each="teacher : ${session.teachers}">
+            <div class="filter">
+                <input type="checkbox" class="checkbox" name="teacher" th:value="${teacher.id}" onchange="submit()" th:checked="${param.teacher != null ? #sets.contains(param.teacher, teacher.id.toString()) : false}">
+                <div class="filter_value" th:text="|${teacher.firstName} ${teacher.lastName}|"></div>
+            </div>
+        </th:block>
+        </th:block>
+        <th:block th:if="${session.path == 'personalCourses.html'}">
+            <div class="filter_name" th:text="#{filter.completion}">
+
+            </div>
+            <div class="filter">
+                <input type="checkbox" class="checkbox" name="completion" value="0" onchange="submit()" th:checked="${param.completion != null ? #sets.contains(param.completion, 0) : false}">
+                <div class="filter_value" th:text="#{filter.todo}"></div>
+            </div>
+            <div class="filter">
+                <input type="checkbox" class="checkbox" name="completion" value="1" onchange="submit()" th:checked="${param.completion != null ? #sets.contains(param.completion, 1) : false}">
+                <div class="filter_value" th:text="#{filter.inProgress}"></div>
+            </div>
+            <div class="filter">
+                <input type="checkbox" class="checkbox" name="completion" value="2" onchange="submit()" th:checked="${param.completion != null ? #sets.contains(param.completion, 2) : false}">
+                <div class="filter_value"  th:text="#{filter.completed}"></div>
+            </div>
+        </th:block>
+    </div>
+</form>
+</body>
+

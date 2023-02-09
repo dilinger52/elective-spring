@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="~{header::header}">
+</div>
+<div class="page">
+    <div class="heading_container">
+        <form action="personal_courses" method="get" >
+            <input class="navigation_button" type="submit" th:value="#{back}"/>
+        </form>
+        <div class="headings">
+            <h1 class="heading1" th:text="|${session.pageKey + 1}.${session.pages[session.pageKey].subtopicName}|">
+            </h1>
+            <div class="subtopic_info">
+                <p class="text" th:text="|#{courseContent.subtopic}: ${session.pageKey + 1} from ${session.pages.size()}|">
+                </p>
+                <p class="text" th:text="|#{courseContent.status}: ${session.subtopicCompletion[session.pageKey]}|">
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr class="separator"/>
+    <div class="content">
+        <div class="content_sidebar">
+            <div class="sidebar_item">
+                <div class="item_header" th:text="|#{courseContent.topic}:|">
+                </div>
+                <div class="item_value" th:text="${session.course.topic}">
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="item_header" th:text="|#{courseContent.teacher}:|">
+                </div>
+                <div class="item_value">
+                    <img src="images/Users.svg" class="course_pic">
+                    <p th:text="${session.coursesTeacher[session.course.id]}"></p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="item_header" th:text="|#{courseContent.duration}:|">
+                </div>
+                <div class="item_value">
+                    <img src="images/Clock.svg" class="course_pic">
+                    <p th:text="${session.course.duration}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="main_information">
+            <p class="subtopic_content" th:text="${session.pages[session.pageKey].subtopicContent}">
+            </p>
+            <form action="pagination" class="navigation_panel" method="get">
+
+                <button class="navigation_button" name="new_page_key" th:text="#{pagination.previous}"
+                        th:value="${session.pageKey - 1}">
+                </button>
+
+                <div class="page_number_wrapper">
+                    <th:block th:each="page : ${session.pages}">
+                        <button class="navigation_button" name="new_page_key" th:value="${page.key}" th:text="${page.key + 1}">
+                        </button>
+                    </th:block>
+                </div>
+
+                <button class="navigation_button" name="new_page_key" th:text="#{pagination.next}"
+                        th:value="${session.pageKey + 1}">
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>

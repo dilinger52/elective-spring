@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    let mybutton = document.getElementById("scroll");
+    function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+<div class="footer" th:fragment="footer">
+    <hr class="separator"/>
+    <div class="footer_content">
+        <p class="text" th:text="#{footer.copyright}">
+        </p>
+        <button class="navigation_button" id="scroll" onclick="topFunction()" th:text="#{footer.action}">
+            <img src="images/ArrowUp.svg" class="navigation_ico"/>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
+

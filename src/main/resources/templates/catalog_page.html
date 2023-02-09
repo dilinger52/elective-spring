@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="~{header::header}">
+</div>
+<div class="page">
+    <form aria-disabled="true" id="clear"></form>
+    <div class="heading_container">
+        <div class="headings">
+            <h1 class="heading1" th:text="#{catalog.head.header}"></h1>
+            <p class="heading2" th:text="#{catalog.head.description}"></p>
+        </div>
+        <input class="search_input" form="filter" name="pattern"
+               th:placeholder='#{catalog.search.placeholder}' type="search" th:value="${param.pattern}"/>
+    </div>
+    <div class="content">
+        <div th:replace="~{filter::filter}"></div>
+        <div class="main_information">
+            <div class="sorting_wrapper">
+                <select class="dropdown" form="filter" name="sorting_pattern" onchange="submit()">
+                    <option class="option" th:text="#{sorting.default}" value="0"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '1' : false}"
+                            th:text="#{sorting.studentsL-H}"
+                            value="1"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '2' : false}"
+                            th:text="#{sorting.studentsH-L}"
+                            value="2"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '3' : false}" th:text="#{sorting.A-Z}"
+                            value="3"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '4' : false}" th:text="#{sorting.Z-A}"
+                            value="4"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '5' : false}"
+                            th:text="#{sorting.durationL-H}"
+                            value="5"></option>
+                    <option class="option" th:selected="${param.sorting_pattern != null ? param.sorting_pattern.toString() == '6' : false}"
+                            th:text="#{sorting.durationH-L}"
+                            value="6"></option>
+                </select>
+                <div class="info_count" th:text="|${calculator.mapSize(session.pages)} #{courseCount}|"></div>
+                <th:block th:if="${session.user.roleId==1}">
+                    <form action="create_course" method="get">
+                        <input class="primary_button" th:value="#{catalog.action.newCourse}"
+                               type="submit"/>
+                    </form>
+                </th:block>
+            </div>
+            <div class="info_wrapper">
+                <th:block th:each="course : ${session.pages[session.pageKey]}">
+                    <div class="course_card">
+                        <div class="text_container">
+                            <div class="course_title" th:text="${course.name}" th:title="#{catalog.title.title}"></div>
+                            <div class="course_description" th:text="${course.description}"
+                                 th:title="#{catalog.description.title}">
+                            </div>
+                            <div class="course_detail" th:title="#{catalog.topic.title}">
+                                <div class="course_tag" th:text="${course.topic}"></div>
+                                <div class="teacher" th:title="#{catalog.teacher.title}">
+                                    <img src="images/Teacher.svg" class="course_pic">
+                                    <p th:if="${session.user.roleId == 2}" th:text="#{catalog.you}"></p>
+                                    <p th:if="${session.user.roleId != 2}" th:text="${session.coursesTeacher[course.id]}"></p>
+                                </div>
+                                <div class="teacher" th:title="#{catalog.students.title}" >
+                                    <img src="images/Users.svg" class="course_pic">
+                                    <p th:text="${session.coursesStudents[course.id]}"></p>
+                                </div>
+                                <div class="teacher" th:title="#{catalog.duration.title}" >
+                                    <img src="images/Clock.svg" class="course_pic">
+                                    <p th:text="${course.duration}"></p>
+                                </div>
+                            </div>
+                        </div>
+                            <form th:if="${session.user.roleId == 1}" action="create_course" method="get">
+                                <input name="courseId" type="hidden" th:value="${course.id}">
+                                <input class="primary_button" th:value="#{catalog.action.edit}" type="submit"/>
+                            </form>
+
+                            <form th:if="${session.user.roleId == 2}" action="view_course" method="get">
+                                <button class="primary_button" name="courseId" th:text="#{catalog.action.viewCourse}" th:value="${course.id}">
+                                </button>
+                            </form>
+
+                            <form th:if="${session.user.roleId == 3 && session.path == 'catalog_page'}" action="join_course" method="post">
+                                <button class="primary_button" name="courseId" th:text="#{catalog.action.join}" th:value="${course.id}">
+                                </button>
+                            </form>
+
+                            <form th:if="${session.user.roleId == 3 && session.path == 'personal_courses'}" action="course_content" method="get">
+                                <button class="primary_button" name="courseId" th:text="#{personalCourses.action}" th:value="${course.id}">
+                                </button>
+                            </form>
+
+                    </div>
+                </th:block>
+                <form action="pagination" class="navigation_panel" method="get">
+
+                    <button class="navigation_button" name="new_page_key" th:text="#{pagination.previous}"
+                            th:value="${session.pageKey - 1}">
+                    </button>
+
+                    <div class="page_number_wrapper">
+                        <th:block th:each="page : ${session.pages}">
+                            <button class="navigation_button" name="new_page_key" th:value="${page.key}" th:text="${page.key + 1}">
+                            </button>
+                        </th:block>
+                    </div>
+
+                    <button class="navigation_button" name="new_page_key" th:text="#{pagination.next}"
+                            th:value="${session.pageKey + 1}">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>
+
+
+

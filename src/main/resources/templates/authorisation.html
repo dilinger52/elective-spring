@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="log_in_wrapper">
+    <img class="logo_symbol" src="images/LogoSymbol.svg">
+    <h1 class="log_in_header" th:text="#{login.header}"></h1>
+    <p class="log_in_text" th:text="#{login.description}"></p>
+    <form class="log_in_form" action="check_user" method="post">
+        <div class="log_in_input_wrapper">
+            <label class="log_in_label" for="email" th:text="#{login.email.label}"></label>
+            <input class="log_in_input" type="email" id="email" name="email" th:placeholder="#{login.email.placeholder}" required/>
+            <div th:if="${!#strings.isEmpty(emailmes)}">
+                <div class="log_in_input_alert" th:text="#{emailmes}"></div>
+            </div>
+        </div>
+        <div class="log_in_input_wrapper">
+            <label class="log_in_label" for="password" th:text="#{login.password.label}"></label>
+            <input class="log_in_input" type="password"  name="password" id="password" th:placeholder="#{login.password.placeholder}" required/>
+            <div th:if="${!#strings.isEmpty(password)}">
+                <div class="log_in_input_alert" th:text="#{password}"></div>
+            </div>
+        </div>
+        <input class="log_in_button" type="submit" th:attr="value=#{login.submit}"/>
+        <div class="filter">
+            <input class="checkbox" type="checkbox" onclick="showPassword()"/>
+            <div class="log_in_text2" th:text="#{login.checkbox}"></div>
+        </div>
+    </form>
+    <p class="log_in_text">
+        <span th:text="#{login.signup.label}"></span>
+        <a class="log_in_ref" href="/registration" th:text="#{login.signup.submit}"></a>
+    </p>
+</div>
+<div class="footer">
+    <hr class="separator"/>
+    <form class="local_dropdown">
+        <select class="dropdown_local" id="language" name="lang" onchange="submit()">
+            <option value="en" th:selected="__${#locale}__ == 'en'">English</option>
+            <option value="ru" th:selected="__${#locale}__ == 'ru'">Russian</option>
+        </select>
+    </form>
+</div>
+<script>
+    function showPassword() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
+</body>
+</html>

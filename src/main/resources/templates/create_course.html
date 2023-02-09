@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="~{header::header}">
+</div>
+<div class="page">
+    <div class="heading_container">
+        <form action="catalog" method="get" >
+            <input class="navigation_button" type="submit" th:value="#{back}"/>
+        </form>
+        <div class="subtopic_count">
+            <h1 th:if="${session.course != null}" class="log_in_header" th:text="#{createCourse.head.header}"></h1>
+            <h1 th:if="${session.course == null}" class="log_in_header" th:text="#{createCourse.head.altHeader}"></h1>
+            <div class="topic_buttons">
+                <th:block th:if="${session.course != null}">
+                    <form method="post" action="delete_course">
+                        <input type="hidden" name="courseId" th:value="${session.course.id}"/>
+                        <input class="primary_button" type="submit" th:value="#{createCourse.action.delete}"/>
+                    </form>
+                    <div class="log_in_form">
+                        <input class="log_in_button" type="submit" th:value="#{createCourse.action.confirm}" form="create"/>
+                        <input type="hidden" name="courseId" th:value="${session.course.id}" form="create"/>
+                    </div>
+                </th:block>
+                <div class="log_in_form">
+                        <input th:if="${session.course == null}" class="log_in_button" type="submit" th:value="#{createCourse.action.create}" form="create"/>
+                </div>
+            </div>
+        </div>
+        <form class="redactor_content" action="create_course" method="post" id="create">
+            <hr class="separator">
+            <div class="redactor_row">
+                <p class="redactor_row_header" th:text="#{createCourse.name.label}"></p>
+                <input class="redactor_input_title" id="name" type="text" name="name" th:value="${session.course != null ? session.course.name : ''}" th:placeholder="#{createCourse.name.placeholder}" required/>
+            </div>
+            <hr class="separator">
+            <div class="redactor_row">
+                <p class="redactor_row_header" th:text="#{createCourse.topic.label}"></p>
+                <div class="redactor_column">
+                <select name="topic" class="dropdown" id="topic">
+                    <option class="option" th:text="#{createCourse.topic.placeholder}" disabled></option>
+                    <th:block th:each="topic : ${session.topics}">
+                        <option class="option" th:value="${topic}" th:selected="${session.course != null ? topic == session.course.getTopic() : false}" th:text="${topic}"></option>
+                    </th:block>
+                </select>
+                <input class="redactor_input_title" type="text" name="topic" th:placeholder="#{createCourse.topic.input}"/>
+                </div>
+            </div>
+            <hr class="separator">
+            <div class="redactor_row">
+                <p class="redactor_row_header" th:text="#{createCourse.duration.label}"></p>
+                <input class="redactor_input_title" id="duration" type="number" name="duration" th:value="${session.course != null ? session.course.duration : ''}" th:placeholder="#{createCourse.duration.placeholder}" required/>
+            </div>
+            <hr class="separator">
+            <div class="redactor_row">
+                <p class="redactor_row_header" th:text="#{createCourse.description.label}"></p>
+                <input class="redactor_input_title" id="description" type="text" name="description" th:value="${session.course != null ? session.course.description : ''}" th:placeholder="#{createCourse.description.placeholder}" required/>
+            </div>
+            <hr class="separator">
+            <div class="redactor_row">
+                <p class="redactor_row_header" th:text="#{createCourse.teacher.label}"></p>
+                <div class="redactor_column">
+                    <select name="teacher" class="dropdown" id="teacher">
+                        <option class="option" th:text="#{createCourse.teacher.default}" disabled></option>
+                        <th:block th:each="teacher : ${session.teachers}">
+                            <option class="option" th:value="${teacher.id}" th:selected="${session.course != null ? teacher.id == session.course.teacherId : false}" th:text="|${teacher.firstName} ${teacher.lastName}|"></option>
+                        </th:block>
+                    </select>
+                    <div style="height: 24px"></div>
+                    <input form="create_teacher" type="submit" th:value="#{createCourse.action.newTeacher}" class="primary_button"/>
+                </div>
+            </div>
+        </form>
+        <form id="create_teacher" action="create_teacher" method="get"></form>
+    </div>
+</div>
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>

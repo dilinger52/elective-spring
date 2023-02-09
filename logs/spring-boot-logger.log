@@ -1,0 +1,214 @@
+2023-02-09 16:18:07,860 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@3f91b517 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@68702e03 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:352)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at org.electivespring.ElectiveSpringApplication.main(ElectiveSpringApplication.java:10)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@3f91b517 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@68702e03 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:251)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:186)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 19 common frames omitted
+2023-02-09 16:19:49,152 INFO o.s.b.StartupInfoLogger [main] Starting ElectiveSpringApplication using Java 17.0.6 with PID 12668 (C:\Users\fanno\IdeaProjects\elective-spring\target\classes started by horn in C:\Users\fanno\IdeaProjects\elective-spring)
+2023-02-09 16:19:49,156 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-02-09 16:19:49,159 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-09 16:19:50,128 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-09 16:19:50,261 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 116 ms. Found 6 JPA repository interfaces.
+2023-02-09 16:19:51,078 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-09 16:19:51,091 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:19:51,093 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-09 16:19:51,094 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-02-09 16:19:51,175 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-09 16:19:51,176 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1940 ms
+2023-02-09 16:19:51,354 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-09 16:19:51,693 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11c88cca
+2023-02-09 16:19:51,696 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-09 16:19:51,742 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-09 16:19:51,796 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-02-09 16:19:52,070 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-09 16:19:52,260 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-09 16:19:53,059 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-09 16:19:53,068 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:19:53,636 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-09 16:19:53,951 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:19:53,973 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-09 16:19:53,985 INFO o.s.b.StartupInfoLogger [main] Started ElectiveSpringApplication in 5.39 seconds (process running for 5.837)
+2023-02-09 16:23:09,397 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-09 16:23:09,397 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-09 16:23:09,399 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-02-09 16:23:24,757 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=6, firstName='student', lastName='test', roleId=3, email='student@test.org', blocked=false}
+2023-02-09 16:23:24,797 DEBUG o.e.l.CourseManager [http-nio-8080-exec-8] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:23:24,808 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:23:24,829 DEBUG o.e.l.CourseManager [http-nio-8080-exec-8] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}, Course{id=3, teacherId=2, name='The Complete 2022 Web Development Bootcamp', topic='it', duration=180}, Course{id=4, teacherId=2, name='UI/UX Design Essential Training', topic='it', duration=150}, Course{id=5, teacherId=2, name='boxing', topic='punch', duration=110}, Course{id=6, teacherId=2, name='sambo', topic='punch', duration=170}, Course{id=7, teacherId=3, name='c++', topic='it', duration=140}, Course{id=8, teacherId=3, name='c++', topic='it', duration=160}, Course{id=9, teacherId=3, name='kung-fu', topic='punch', duration=130}, Course{id=10, teacherId=3, name='Training course from Onepunchman', topic='punch', duration=100}]
+2023-02-09 16:23:24,833 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,834 DEBUG o.e.l.CourseManager [http-nio-8080-exec-8] courses properties: []
+2023-02-09 16:23:24,841 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: [StudentsCourse{studentId=4, courseId=1, registrationDate=2021-10-21, grade=null}]
+2023-02-09 16:23:24,844 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: [StudentsCourse{studentId=5, courseId=2, registrationDate=2021-12-10, grade=null}]
+2023-02-09 16:23:24,847 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: [StudentsCourse{studentId=5, courseId=3, registrationDate=2021-12-21, grade=5}]
+2023-02-09 16:23:24,849 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: [StudentsCourse{studentId=4, courseId=4, registrationDate=2021-10-12, grade=3}]
+2023-02-09 16:23:24,852 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,855 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,858 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,861 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,864 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,866 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] find courses: []
+2023-02-09 16:23:24,876 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,879 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,882 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,887 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,890 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,893 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:23:24,896 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:23:24,898 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:23:24,900 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:23:24,903 DEBUG o.e.l.UserManager [http-nio-8080-exec-8] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:27,811 DEBUG o.e.l.CourseManager [http-nio-8080-exec-6] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:27,815 DEBUG o.e.l.UserManager [http-nio-8080-exec-6] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:27,818 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-6] find courses: []
+2023-02-09 16:24:27,819 DEBUG o.e.l.CourseManager [http-nio-8080-exec-6] courses properties: []
+2023-02-09 16:24:37,020 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:37,023 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:37,028 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}, Course{id=3, teacherId=2, name='The Complete 2022 Web Development Bootcamp', topic='it', duration=180}, Course{id=4, teacherId=2, name='UI/UX Design Essential Training', topic='it', duration=150}, Course{id=5, teacherId=2, name='boxing', topic='punch', duration=110}, Course{id=6, teacherId=2, name='sambo', topic='punch', duration=170}, Course{id=7, teacherId=3, name='c++', topic='it', duration=140}, Course{id=8, teacherId=3, name='c++', topic='it', duration=160}, Course{id=9, teacherId=3, name='kung-fu', topic='punch', duration=130}, Course{id=10, teacherId=3, name='Training course from Onepunchman', topic='punch', duration=100}]
+2023-02-09 16:24:37,031 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,031 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] courses properties: []
+2023-02-09 16:24:37,034 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: [StudentsCourse{studentId=4, courseId=1, registrationDate=2021-10-21, grade=null}]
+2023-02-09 16:24:37,037 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: [StudentsCourse{studentId=5, courseId=2, registrationDate=2021-12-10, grade=null}]
+2023-02-09 16:24:37,039 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: [StudentsCourse{studentId=5, courseId=3, registrationDate=2021-12-21, grade=5}]
+2023-02-09 16:24:37,042 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: [StudentsCourse{studentId=4, courseId=4, registrationDate=2021-10-12, grade=3}]
+2023-02-09 16:24:37,044 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,046 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,049 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,051 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,053 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,055 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: []
+2023-02-09 16:24:37,057 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,064 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,065 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,069 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,071 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,072 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:37,073 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:37,075 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:37,076 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:37,078 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:38,742 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-10] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:38,754 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-10] User: User{id=6, firstName='student', lastName='test', roleId=3, email='student@test.org', blocked=false} Joined course: StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}
+2023-02-09 16:24:38,773 DEBUG o.e.l.CourseManager [http-nio-8080-exec-1] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:38,776 DEBUG o.e.l.UserManager [http-nio-8080-exec-1] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:38,778 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-1] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:24:38,783 DEBUG o.e.l.CourseManager [http-nio-8080-exec-1] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:24:38,784 DEBUG o.e.l.CourseManager [http-nio-8080-exec-1] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}]
+2023-02-09 16:24:38,787 DEBUG o.e.l.UserManager [http-nio-8080-exec-1] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:38,793 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-1] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:38,796 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-1] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:38,799 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-1] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=1, completion='uncompleted'}
+2023-02-09 16:24:38,803 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-1] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=2, completion='uncompleted'}
+2023-02-09 16:24:38,805 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-1] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=3, completion='uncompleted'}
+2023-02-09 16:24:38,808 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-1] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=4, completion='uncompleted'}
+2023-02-09 16:24:47,761 DEBUG o.e.l.CourseManager [http-nio-8080-exec-4] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:47,763 DEBUG o.e.l.UserManager [http-nio-8080-exec-4] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:47,766 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-4] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:24:47,769 DEBUG o.e.l.CourseManager [http-nio-8080-exec-4] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:24:47,769 DEBUG o.e.l.CourseManager [http-nio-8080-exec-4] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}]
+2023-02-09 16:24:47,770 DEBUG o.e.l.UserManager [http-nio-8080-exec-4] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:47,775 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-4] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:47,777 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-4] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:47,779 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-4] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=1, completion='uncompleted'}
+2023-02-09 16:24:47,782 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-4] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=2, completion='uncompleted'}
+2023-02-09 16:24:47,784 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-4] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=3, completion='uncompleted'}
+2023-02-09 16:24:47,786 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-4] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=4, completion='uncompleted'}
+2023-02-09 16:24:52,014 DEBUG o.e.l.CourseManager [http-nio-8080-exec-7] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:52,018 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:52,023 DEBUG o.e.l.CourseManager [http-nio-8080-exec-7] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}, Course{id=3, teacherId=2, name='The Complete 2022 Web Development Bootcamp', topic='it', duration=180}, Course{id=4, teacherId=2, name='UI/UX Design Essential Training', topic='it', duration=150}, Course{id=5, teacherId=2, name='boxing', topic='punch', duration=110}, Course{id=6, teacherId=2, name='sambo', topic='punch', duration=170}, Course{id=7, teacherId=3, name='c++', topic='it', duration=140}, Course{id=8, teacherId=3, name='c++', topic='it', duration=160}, Course{id=9, teacherId=3, name='kung-fu', topic='punch', duration=130}, Course{id=10, teacherId=3, name='Training course from Onepunchman', topic='punch', duration=100}]
+2023-02-09 16:24:52,026 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:24:52,028 DEBUG o.e.l.CourseManager [http-nio-8080-exec-7] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:24:52,029 DEBUG o.e.l.CourseManager [http-nio-8080-exec-7] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}]
+2023-02-09 16:24:52,031 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: [StudentsCourse{studentId=5, courseId=2, registrationDate=2021-12-10, grade=null}]
+2023-02-09 16:24:52,035 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: [StudentsCourse{studentId=5, courseId=3, registrationDate=2021-12-21, grade=5}]
+2023-02-09 16:24:52,038 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: [StudentsCourse{studentId=4, courseId=4, registrationDate=2021-10-12, grade=3}]
+2023-02-09 16:24:52,039 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,041 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,043 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,045 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,047 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,048 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-7] find courses: []
+2023-02-09 16:24:52,051 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:52,053 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:52,054 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:52,055 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:52,057 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:52,058 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:52,059 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:52,061 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:52,062 DEBUG o.e.l.UserManager [http-nio-8080-exec-7] find user: User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}
+2023-02-09 16:24:55,267 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-8] subtopics properties: [Subtopic{courseId=2, subtopicId=5, subtopicName='Surprise'}, Subtopic{courseId=2, subtopicId=6, subtopicName='As it so contrasted'}]
+2023-02-09 16:24:55,270 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-8] User: User{id=6, firstName='student', lastName='test', roleId=3, email='student@test.org', blocked=false} Joined course: StudentsCourse{studentId=6, courseId=2, registrationDate=2023-02-09, grade=null}
+2023-02-09 16:24:55,280 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:24:55,283 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:24:55,285 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-9] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}, StudentsCourse{studentId=6, courseId=2, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:24:55,288 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:24:55,290 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] course properties: Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}
+2023-02-09 16:24:55,291 DEBUG o.e.l.CourseManager [http-nio-8080-exec-9] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}]
+2023-02-09 16:24:55,292 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:55,293 DEBUG o.e.l.UserManager [http-nio-8080-exec-9] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:24:55,298 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-9] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:55,300 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-9] subtopics properties: [Subtopic{courseId=2, subtopicId=5, subtopicName='Surprise'}, Subtopic{courseId=2, subtopicId=6, subtopicName='As it so contrasted'}]
+2023-02-09 16:24:55,303 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-9] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:24:55,306 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=1, completion='uncompleted'}
+2023-02-09 16:24:55,309 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=2, completion='uncompleted'}
+2023-02-09 16:24:55,311 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=3, completion='uncompleted'}
+2023-02-09 16:24:55,313 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=4, completion='uncompleted'}
+2023-02-09 16:24:55,315 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-9] subtopics properties: [Subtopic{courseId=2, subtopicId=5, subtopicName='Surprise'}, Subtopic{courseId=2, subtopicId=6, subtopicName='As it so contrasted'}]
+2023-02-09 16:24:55,317 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=5, completion='uncompleted'}
+2023-02-09 16:24:55,320 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-9] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=6, completion='uncompleted'}
+2023-02-09 16:25:08,655 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] courses properties: [it, it, it, it, punch, punch, it, it, punch, punch]
+2023-02-09 16:25:08,657 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find teachers: [User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}, User{id=3, firstName='bruce', lastName='lee', roleId=2, email='bruce_lee@test.org', blocked=false}, User{id=7, firstName='teacher', lastName='test', roleId=2, email='teacher@test.org', blocked=false}, User{id=8, firstName='John', lastName='Connor', roleId=2, email='teacher2@test.org', blocked=false}]
+2023-02-09 16:25:08,661 DEBUG o.e.l.StudentsCourseManager [http-nio-8080-exec-3] find courses: [StudentsCourse{studentId=6, courseId=1, registrationDate=2023-02-09, grade=null}, StudentsCourse{studentId=6, courseId=2, registrationDate=2023-02-09, grade=null}]
+2023-02-09 16:25:08,664 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:25:08,667 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] course properties: Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}
+2023-02-09 16:25:08,667 DEBUG o.e.l.CourseManager [http-nio-8080-exec-3] courses properties: [Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}, Course{id=2, teacherId=2, name='Game Dev C# Developer Course', topic='it', duration=190}]
+2023-02-09 16:25:08,668 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:25:08,669 DEBUG o.e.l.UserManager [http-nio-8080-exec-3] find user: User{id=2, firstName='bill', lastName='gayts', roleId=2, email='bill_gayts@test.org', blocked=false}
+2023-02-09 16:25:08,676 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-3] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:25:08,677 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-3] subtopics properties: [Subtopic{courseId=2, subtopicId=5, subtopicName='Surprise'}, Subtopic{courseId=2, subtopicId=6, subtopicName='As it so contrasted'}]
+2023-02-09 16:25:08,679 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-3] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:25:08,681 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=1, completion='uncompleted'}
+2023-02-09 16:25:08,683 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=2, completion='uncompleted'}
+2023-02-09 16:25:08,685 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=3, completion='uncompleted'}
+2023-02-09 16:25:08,687 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=4, completion='uncompleted'}
+2023-02-09 16:25:08,689 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-3] subtopics properties: [Subtopic{courseId=2, subtopicId=5, subtopicName='Surprise'}, Subtopic{courseId=2, subtopicId=6, subtopicName='As it so contrasted'}]
+2023-02-09 16:25:08,691 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=5, completion='uncompleted'}
+2023-02-09 16:25:08,693 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-3] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=6, completion='uncompleted'}
+2023-02-09 16:25:15,151 DEBUG o.e.l.CourseManager [http-nio-8080-exec-6] course properties: Course{id=1, teacherId=2, name='Full Java Course For Beginners', topic='it', duration=120}
+2023-02-09 16:25:15,153 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-6] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:25:15,156 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-6] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:25:15,158 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-6] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=1, completion='uncompleted'}
+2023-02-09 16:25:15,161 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-6] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=2, completion='uncompleted'}
+2023-02-09 16:25:15,166 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-6] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=3, completion='uncompleted'}
+2023-02-09 16:25:15,169 DEBUG o.e.l.StudentsSubtopicManager [http-nio-8080-exec-6] subtopic properties: StudentsSubtopic{studentId=6, subtopicId=4, completion='uncompleted'}
+2023-02-09 16:25:22,616 DEBUG o.e.l.SubtopicManager [http-nio-8080-exec-8] subtopics properties: [Subtopic{courseId=1, subtopicId=1, subtopicName='Ladies'}, Subtopic{courseId=1, subtopicId=2, subtopicName='Domestic'}, Subtopic{courseId=1, subtopicId=3, subtopicName='Acceptance'}, Subtopic{courseId=1, subtopicId=4, subtopicName='Son'}]
+2023-02-09 16:31:25,466 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:31:25,468 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-09 16:31:25,475 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

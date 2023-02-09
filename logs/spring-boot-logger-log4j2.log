@@ -1,0 +1,27 @@
+2023-02-09 16:16:37,569 INFO o.s.b.StartupInfoLogger [main] Starting ElectiveSpringApplication using Java 17.0.6 with PID 12608 (C:\Users\fanno\IdeaProjects\elective-spring\target\classes started by horn in C:\Users\fanno\IdeaProjects\elective-spring)
+2023-02-09 16:16:37,583 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.0, Spring v6.0.2
+2023-02-09 16:16:37,585 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-09 16:16:38,361 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-09 16:16:38,446 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2023-02-09 16:16:39,293 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-09 16:16:39,304 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:16:39,306 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-09 16:16:39,306 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-02-09 16:16:39,382 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-09 16:16:39,384 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1740 ms
+2023-02-09 16:16:39,567 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-09 16:16:39,920 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71b97eeb
+2023-02-09 16:16:39,922 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-09 16:16:39,971 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-09 16:16:40,030 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-02-09 16:16:40,324 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-09 16:16:40,508 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-09 16:16:41,328 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-09 16:16:41,339 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:16:41,868 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-09 16:16:42,189 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-09 16:16:42,213 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-09 16:16:42,222 INFO o.s.b.StartupInfoLogger [main] Started ElectiveSpringApplication in 5.218 seconds (process running for 6.033)
+2023-02-09 16:18:01,188 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-09 16:18:01,190 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-09 16:18:01,197 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

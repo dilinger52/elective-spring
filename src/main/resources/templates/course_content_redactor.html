@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Good courses</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{header::header}"></div>
+<div class="page">
+    <div class="heading_container">
+        <form action="view_course" method="get" >
+            <input class="navigation_button" type="submit" th:value="#{back}"/>
+        </form>
+        <div class="headings">
+            <h1 class="heading1" th:text="${session.course.name}"></h1>
+        </div>
+        <div class="subtopic_count">
+            <p class="redactor_subtopic" th:text="|#{courseContent.subtopic} ${session.pageKey + 1}|"></p>
+            <div class="topic_buttons">
+                <form method="post" action="delete_subtopic">
+                    <input type="hidden" name="subtopicId" th:value="${session.pages[session.pageKey].subtopicId}"/>
+                    <input class="primary_button" type="submit" th:value="#{courseContentRedactor.delete}"/>
+                </form>
+                <input class="secondary_button" type="submit" th:value="#{courseContentRedactor.save}" form="redactor">
+            </div>
+        </div>
+        <div class="redactor_content">
+            <hr class="separator">
+            <th:block th:if="${#maps.size(session.pages) >= 1}">
+                <div class="redactor_row">
+                    <p class="redactor_row_header" th:text="#{courseContentRedactor.subtopicTitle}"></p>
+                    <input class="redactor_input_title" form="redactor" name="subtopicName" th:value="${session.pages[session.pageKey].subtopicName}"/>
+                </div>
+                <hr class="separator">
+                <div class="redactor_row">
+                    <p class="redactor_row_header" th:text="#{courseContentRedactor.subtopicContent}"></p>
+                    <form action="content_redactor" method="post" id="redactor">
+                        <input type="hidden" name="subtopicId" th:value="${session.pages[session.pageKey].subtopicId}"/>
+                        <textarea class="redactor_input_content" name="subtopicContent" th:text="${session.pages[session.pageKey].subtopicContent}"></textarea>
+                    </form>
+                </div>
+            </th:block>
+                 <form method="post" action="pagination" class="navigation_panel redactor">
+                         <button class="navigation_button" name="new_page_key" th:value="${session.pageKey - 1}" th:text="#{pagination.previous}"></button>
+                     <div class="page_number_wrapper">
+                             <button th:each="page : ${session.pages}" class="navigation_button" name="new_page_key"
+                                     th:value="${page.key}" th:text="${page.key + 1}"></button>
+                     </div>
+                         <button th:if="${session.pageKey < session.pages.size() - 1}" class="navigation_button"
+                                 name="new_page_key" th:value="${session.pageKey + 1}" th:text="#{pagination.next}"></button>
+                         <input th:if="${session.pageKey >= session.pages.size() - 1}" form="newsub" class="navigation_button"
+                                type="submit" th:value="#{courseContentRedactor.createNew}"/>
+                 </form>
+            <form method="post" action="new_subtopic" id="newsub">
+                <input type="hidden" name="courseId" th:value="${session.course.id}">
+            </form>
+             </div>
+    </div>
+</div>
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>

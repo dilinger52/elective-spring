@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{header::header}">
+</div>
+<div class="page">
+    <div class="heading_container">
+        <div class="headings">
+            <h1 class="heading1" th:text="#{adminStudentPage.head.header}"></h1>
+            <p class="heading2" th:text="#{adminStudentPage.head.description}"></p>
+        </div>
+    </div>
+    <div class="content">
+        <table class="table">
+            <tr class="table_header">
+                <th class="header_item1" th:text="#{adminStudentPage.table.name}"></th>
+                <th class="header_item" th:text="#{adminStudentPage.table.registerCourses}"></th>
+                <th class="header_item" th:text="#{adminStudentPage.table.startedCourses}"></th>
+                <th class="header_item" th:text="#{adminStudentPage.table.finishedCourses}"></th>
+                <th class="header_item" th:text="#{adminStudentPage.table.blocked}"></th>
+                <th class="header_item1" th:text="#{adminStudentPage.table.averageGrade}"></th>
+            </tr>
+            <th:block th:each="student : ${session.students}">
+                <tr class="table_row">
+                    <td>
+                        <div class="student_info">
+                            <div class="student_name" th:text="|${student.firstName} ${student.lastName}|"></div>
+                            <div class="student_email" th:text="${student.email}"></div>
+                        </div>
+                    </td>
+                    <td class="student_name" th:text="${session.registeredCourses[student.id].size()}"></td>
+                    <td class="student_name" th:text="${session.startedCourses[student.id].size()}"></td>
+                    <td class="student_name" th:text="${session.finishedCourses[student.id].size()}"></td>
+                    <td class="student_name" th:text="${student.isBlocked()}"></td>
+                    <td>
+                        <form method="post" action="students" class="rating_form">
+                            <input type="hidden" name="student" th:value="${student.id}" />
+                            <div class="rating">
+                                <input th:id="|radio1${student.id}|" type="radio" name="grade" value="5" class="star" th:checked="${session.studentsGrade[student.id] == 5}"/>
+                                <label th:for="|radio1${student.id}|">&#9733;</label>
+                                <input th:id="|radio2${student.id}|" type="radio" name="grade" value="4" class="star" th:checked="${session.studentsGrade[student.id] == 4}"/>
+                                <label th:for="|radio2${student.id}|">&#9733;</label>
+                                <input th:id="|radio3${student.id}|" type="radio" name="grade" value="3" class="star" th:checked="${session.studentsGrade[student.id] == 3}"/>
+                                <label th:for="|radio3${student.id}|">&#9733;</label>
+                                <input th:id="|radio4${student.id}|" type="radio" name="grade" value="2" class="star" th:checked="${session.studentsGrade[student.id] == 2}"/>
+                                <label th:for="|radio4${student.id}|">&#9733;</label>
+                                <input th:id="|radio5${student.id}|" type="radio" name="grade" value="1" class="star" th:checked="${session.studentsGrade[student.id] == 1}"/>
+                                <label th:for="|radio5${student.id}|">&#9733;</label>
+                            </div>
+                            <input th:if="${student.isBlocked() == 'true'}" type="submit" class="primary_button" th:value="#{adminStudentPage.action.unblock}"/>
+                            <input th:if="${student.isBlocked() == 'false'}" type="submit" class="primary_button" th:value="#{adminStudentPage.action.block}"/>
+                        </form>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+</div>
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>

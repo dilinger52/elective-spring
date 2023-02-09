@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="register_form">
+    <div class="log_in_input_wrapper">
+        <label class="log_in_label" for="email" th:text="#{login.email.label}"></label>
+        <input class="log_in_input" id="email" type="email" name="email" th:placeholder="#{login.email.placeholder}" required/>
+        <div th:if="${session.email != null}" class="log_in_input_alert" th:text="${session.email}"></div>
+    </div>
+    <div class="log_in_input_wrapper">
+        <label class="log_in_label" for="firstName" th:text="#{registerForm.firstName.label}"></label>
+        <input class="log_in_input" id="firstName" type="text" name="first_name" th:placeholder="#{registerForm.firstName.placeholder}" required/>
+        <div th:if="${session.firstName != null}" class="log_in_input_alert" th:text="${session.firstName}"></div>
+    </div>
+    <div class="log_in_input_wrapper">
+        <label class="log_in_label" for="lastName" th:text="#{registerForm.lastName.label}"></label>
+        <input class="log_in_input" id="lastName" type="text" name="last_name" th:placeholder="#{registerForm.lastName.placeholder}" required/>
+        <div th:if="${session.lastName != null}" class="log_in_input_alert" th:text="${session.lastName}"></div>
+    </div>
+    <div class="log_in_input_wrapper">
+        <label class="log_in_label" for="password" th:text="#{login.password.label}"></label>
+        <input class="log_in_input" type="password" name="password" id="password" th:placeholder="#{login.password.placeholder}" required/>
+        <div th:if="${session.password != null}" class="log_in_input_alert" th:text="${session.password}"></div>
+    </div>
+    <div class="log_in_input_wrapper">
+        <label class="log_in_label" for="confpass" th:text="#{registerForm.confpass.label}"></label>
+        <input class="log_in_input" type="password" name="confpass" id="confpass" th:placeholder="#{registerForm.confpass.placeholder}" required/>
+        <div th:if="${session.confpass != null}" class="log_in_input_alert" th:text="${session.confpass}"></div>
+    </div>
+    <input class="log_in_button" type="submit" th:value="#{registerForm.action}"/>
+    <div class="filter">
+        <input class="checkbox" type="checkbox" onclick="showPassword()"/>
+        <div class="log_in_text2" th:text="#{login.checkbox}"></div>
+    </div>
+
+</form>
+    <p class="log_in_text" th:if="${session.user == null}">
+        <th:block th:text="#{registerForm.login.label}"></th:block> <a class="log_in_ref" href="/log_in"><th:block th:text="#{registerForm.login.submit}"></th:block></a>
+    </p>
+    <script>
+    function showPassword() {
+    var x = document.getElementById("password");
+    var y = document.getElementById("confpass");
+    if (x.type === "password") {
+        x.type = "text";
+        y.type = "text";
+    } else {
+        x.type = "password";
+        y.type = "password";
+    }
+}
+</script>
+</div>
+</body>
+

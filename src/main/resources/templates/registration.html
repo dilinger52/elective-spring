@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="log_in_wrapper">
+        <img class="logo_symbol" src="images/LogoSymbol.svg">
+        <h1 class="log_in_header" th:text="#{registration.header}"></h1>
+        <p class="log_in_text" th:text="#{registration.description}"></p>
+    <form class="log_in_form" action="registration" method="post">
+        <div th:replace="~{register_form::register_form}"></div>
+    </div>
+    <div class="footer">
+        <hr class="separator"/>
+        <form class="local_dropdown">
+            <select class="dropdown_local" id="language" name="lang" onchange="submit()">
+                <option th:selected="__${#locale}__ == 'en'" value="en">en</option>
+                <option th:selected="__${#locale}__ == 'ru'" value="ru">ru</option>
+            </select>
+        </form>
+    </div>
+</body>
+</html>

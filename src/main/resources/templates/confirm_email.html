@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Good courses</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="~{header::header}"></div>
+<div class="page">
+<div class="heading_container">
+    <div class="headings">
+    <h2 class="heading1" th:text="#{confirmEmail.header}"></h2>
+    <p class="heading2" th:text="|#{confirmEmail.description}: ${email}.|"></p>
+    <p class="heading2" th:text="#{confirmEmail.description2}"></p>
+    </div>
+</div>
+    <div class="page">
+        <div th:replace="~{footer::footer}"></div>
